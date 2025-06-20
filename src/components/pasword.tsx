@@ -23,6 +23,16 @@ export class Password extends React.Component<PasswordProps> {
         </form>
         <div className="lp-pg-generated-password__icon-wrapper">
           <button
+            onClick={() => {
+              const passwordInput = document.getElementById(
+                "GENERATED-PASSWORD"
+              ) as HTMLInputElement;
+              if (passwordInput) {
+                passwordInput.select();
+                document.execCommand("copy");
+                alert("Password copied to clipboard!");
+              }
+            }}
             data-clipboard-target="#GENERATED-PASSWORD"
             className="lp-pg-generated-password__icon lp-pg-generated-password__icon-copy"
           >
