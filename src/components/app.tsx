@@ -7,7 +7,9 @@ export class App extends Component {
     generatedPassword: "82/axb*9W;ttksnl",
   };
   handleGeneretePassword = () => {
-    this.setState(() => ({ generatePassword: generatePassword() }));
+    this.setState(() => ({
+      generatedPassword: generatePassword(),
+    }));
   };
   render() {
     return (
@@ -22,7 +24,7 @@ export class App extends Component {
         </p>
         <Password
           password={this.state.generatedPassword}
-          handleGeneretePassword={() => this.handleGeneretePassword}
+          handleGeneretePassword={() => this.handleGeneretePassword()}
         />
       </div>
     );
